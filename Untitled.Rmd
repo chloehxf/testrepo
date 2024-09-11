@@ -13,6 +13,28 @@ ctrl+ alt + i
 # Running code will output the code in the Console and the Document
 
 # When complete, you can click "Knit"
+
+# Set-up your script ------------------------------------------------------
+
+# install.packages(c("tidyverse", "gapminder", "pacman")) # uncomment if already installed
+pacman::p_load(tidyverse, gapminder)
+
+    Then load the data you want to work with into R.
+
+# Load your Data into R ---------------------------------------------------
+
+data(gapminder)
+head(gapminder)
+
+    Finally, start cleaning your data.
+
+# Clean your Data ---------------------------------------------------------
+
+gapminder_clean <- gapminder %>% 
+  rename(life_exp = lifeExp, gdp_per_cap = gdpPercap) %>% 
+  mutate(gdp = pop * gdp_per_cap)
+    
+    
 ```
 
 
